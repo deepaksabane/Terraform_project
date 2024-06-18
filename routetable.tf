@@ -4,6 +4,10 @@ resource "aws_route_table" "Rt1-public" {
         cidr_block = "0.0.0.0/0"
         gateway_id = aws_internet_gateway.igw.id
     }
+
+    tags = {
+        Name = "Rt1-public-routetable"
+    }
   
 }
               
@@ -21,6 +25,9 @@ resource "aws_route_table" "Rt2-public" {
         gateway_id = aws_internet_gateway.igw.id
 
     }
+    tags = {
+       Name = "Rt2-public-routetable"
+    }
 }
 
 resource "aws_route_table_association" "public-rta2" {
@@ -31,6 +38,10 @@ resource "aws_route_table_association" "public-rta2" {
 
 resource "aws_route_table" "private_rta1" {
     vpc_id = aws_vpc.main.id
+
+    tags = {
+      Name = "Rt1-private-routetable"
+    }
   
 }
 
@@ -42,6 +53,9 @@ resource "aws_route_table_association" "rta1-private" {
 
 resource "aws_route_table" "private_rta2" {
   vpc_id = aws_vpc.main.id
+  tags = {
+    Name = "Rt2-private-routetable"
+  }
 
 }
  
