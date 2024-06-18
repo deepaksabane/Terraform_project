@@ -3,7 +3,7 @@ resource "aws_alb" "myloadbalancer" {
     internal = false
     load_balancer_type = "application"
     security_groups = [aws_security_group.allow_tls.id]
-    subnets = [aws_subnet.public_subnet-2a.id, aws_subnet.public_subnet-2b.id, aws_subnet.private_subnet-2a.id, aws_subnet.private_subnet_2b.id]
+    subnets = [aws_subnet.public_subnet-2a.id, aws_subnet.public_subnet-2b.id]
     enable_deletion_protection = false
     tags = {
         Name = "myappy"
@@ -19,6 +19,12 @@ resource "aws_alb_target_group" "app_tg" {
     health_check {
         path = "/"
         port = "traffic-port"
+        interval = 30
+        timeout = 5
+        healthy_threshold = 5
+        unhealthy_threshold = 2
+        matcher = "200"
+
     }
 }
 

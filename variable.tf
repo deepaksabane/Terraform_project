@@ -55,7 +55,3 @@ variable "instance_type" {
   
 }
 
-variable "health_check" {
-    description = "health check value"
-  
-}

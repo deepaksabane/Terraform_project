@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "mys3" {
-  bucket_prefix = "deepu_forever"
+  bucket_prefix = "deepu-forever"  # Use hyphen instead of underscore
 
   tags = {
     Name        = "deepu_forever"
