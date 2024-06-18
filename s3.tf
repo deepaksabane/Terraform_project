@@ -6,13 +6,13 @@ resource "aws_s3_bucket" "mys3" {
     Environment = "Dev"
   }
 }
-resource "aws_s3_bucket_acl" "example" {
+resource "aws_s3_bucket_acl" "mys3" {
     depends_on = [ 
-        aws_s3_bucket_ownership_controls.example,
-        aws_s3_public_access_block.example
+        aws_s3_bucket_ownership_controls.mys3,
+        aws_s3_public_access_block.mys3
 
      ]
-     bucket = aws_s3_bucket.portfolio_bucket.id
+     bucket = aws_s3_bucket.mys3.id
      acl = "public-read"
   
 }

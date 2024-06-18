@@ -46,3 +46,16 @@ variable "availability_zone_private_2b" {
     description = "availabilty zone 2a "
 }
 
+variable "ami" {
+    description = "The ec2 instance ami"
+  
+}
+variable "instance_type" {
+    description = "instance type "
+  
+}
+
+variable "aws_security_group" {
+    description = "securitygroup"
+  
+}
