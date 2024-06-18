@@ -55,7 +55,3 @@ variable "instance_type" {
   
 }
 
-variable "aws_security_group" {
-    description = "securitygroup"
-  
-}
