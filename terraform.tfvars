@@ -10,4 +10,5 @@ availability_zone_private_2a = "ap-south-2a"
 availability_zone_private_2b = "ap-south-2b"
 ami = "ami-0d3d751381e72e605"
 instance_type = "t3.medium"
+health_check = "/"
 
